@@ -1,0 +1,33 @@
+- name: Allow related and established connections
+  iptables:
+    chain: INPUT
+    ctstate: ESTABLISHED,RELATED
+    jump: ACCEPT
+    comment: Allow Establised and Related connections.
+
+- name: Allow new incoming SYN packets on TCP port 22 (SSH).
+  iptables:
+    chain: INPUT
+    protocol: tcp
+    destination_port: 22
+    ctstate: NEW
+    syn: match
+    jump: ACCEPT
+    comment: Accept new SSH connections.
+
+- name: Allow ICMP incoming traffic.
+  iptables:
+    chain: INPUT
+    protocol: icmp
+    jump: ACCEPT
+    comment: Accept ICMP traffic.
+
+- name: Set the policy for the INPUT chain to DROP.
+  iptables:
+    chain: INPUT
+    policy: DROP
+
+- name: Check if SSH is working before saving the rules.
+  wait_for:
+    host: '{{ inventory_hostname }}'
+    port: '22'

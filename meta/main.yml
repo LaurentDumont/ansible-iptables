@@ -2,7 +2,7 @@
 
 galaxy_info:
   author: Laurent Dumont
-  description: Install Python on a host without Python already present.
+  description: Manage Iptables on a Debian 10 systen.
   company: Bell Canada
   license: MIT
   min_ansible_version: 2.8

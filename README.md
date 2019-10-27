@@ -1,7 +1,7 @@
 Ansible role template
 =========
 
-{Summary of the role objectives and functions.}
+Ansible role to manage Iptables on a Debian 10 system.
 
 Role Variables
 --------------
