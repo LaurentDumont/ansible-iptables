@@ -1,4 +1,3 @@
 ---
-- include: 
-  - install_persistent_iptables.yml
-  - appy_netfilter_rules.yml
+- include: install_persistent_iptables.yml
+- include: appy_netfilter_rules.yml
