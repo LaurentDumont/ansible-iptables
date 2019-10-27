@@ -31,3 +31,9 @@
   wait_for:
     host: '{{ inventory_hostname }}'
     port: '22'
+  delegate_to: localhost
+  register: ssh_status
+
+- name: print
+  debug:
+    var: ssh_status
