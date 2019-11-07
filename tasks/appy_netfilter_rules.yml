@@ -15,7 +15,7 @@
     jump: ACCEPT
     comment: Accept new SSH connections.
 
-- name: Allow new incoming SYN packets on TCP port 1313 (SSH).
+- name: Allow new incoming SYN packets on TCP port 1313 (Hugo).
   iptables:
     chain: INPUT
     protocol: tcp
@@ -23,7 +23,7 @@
     ctstate: NEW
     syn: match
     jump: ACCEPT
-    comment: Accept new SSH connections.
+    comment: Accept new ZNC IRC web connections.
 
 - name: Allow ICMP incoming traffic.
   iptables:
